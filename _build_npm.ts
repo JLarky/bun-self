@@ -22,7 +22,9 @@ async function start() {
       },
     ],
     outDir: "./npm",
-    shims: {},
+    shims: {
+      deno: true,
+    },
     test: false,
     typeCheck: "both",
     compilerOptions: {
