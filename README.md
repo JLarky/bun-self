@@ -57,3 +57,4 @@ Of course it doesn't have to be a friend, you can hide that stuff in plain sight
 # References
 
 - [makeself.io](https://github.com/megastep/makeself)
+- [created with DTN](https://jlarky.vercel.app/posts/how-to-create-npm-package)
