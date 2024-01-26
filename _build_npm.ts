@@ -17,7 +17,7 @@ async function start() {
       "./mod.ts",
       {
         kind: "bin",
-        name: "bunsh",
+        name: "bun-self",
         path: "./cli.ts",
       },
     ],
@@ -34,7 +34,7 @@ async function start() {
       lib: ["ESNext", "DOM", "DOM.Iterable"],
     },
     package: {
-      name: "bunsh",
+      name: "bun-self",
       version: Deno.args[0],
       description:
         "Do you sometimes wish that you could just run javascript as if it was bash?",
@@ -45,10 +45,10 @@ async function start() {
       },
       repository: {
         type: "git",
-        url: "git+https://github.com/JLarky/bunsh.git",
+        url: "git+https://github.com/JLarky/bun-self.git",
       },
       bugs: {
-        url: "https://github.com/JLarky/bunsh/issues",
+        url: "https://github.com/JLarky/bun-self/issues",
       },
       dependencies: {},
       devDependencies: {},

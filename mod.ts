@@ -64,7 +64,7 @@ function getTempalte() {
 #!/usr/bin/env bash
 
 /*/.this-doesnt-exist 2>/dev/null
-## Please do not edit this part of the script, this is a loader created by "bunx bunsh"
+## Please do not edit this part of the script, this is a loader created by "bunx bun-self"
 if ! [ -x "$(command -v bun)" ]; then
     echo "Installing bun.sh"
     sleep 2

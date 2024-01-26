@@ -1,4 +1,4 @@
-# Bunsh
+# bun-self
 
 Let's say you have a file called `script.ts` with the following content:
 
@@ -12,7 +12,7 @@ And you really want your friend to run it, so you decide to share a gist with th
 But you won't even believe what happens next:
 
 ```sh
-bunx bunsh script.ts
+bunx bun-self script.ts
 ```
 
 And you send this beauty to your friend instead (`script.run.ts`):
@@ -21,7 +21,7 @@ And you send this beauty to your friend instead (`script.run.ts`):
 #!/usr/bin/env bash
 
 /*/.this-doesnt-exist 2>/dev/null
-## Please do not edit this part of the script, this is a loader created by "bunx bunsh"
+## Please do not edit this part of the script, this is a loader created by "bunx bun-self"
 if ! [ -x "$(command -v bun)" ]; then
     echo "Installing bun.sh"
     sleep 2
@@ -53,3 +53,7 @@ chmod +x ./script.run.ts
 They won't even know what hit them.
 
 Of course it doesn't have to be a friend, you can hide that stuff in plain sight at your job with an innocent-looking "bash script.run.ts" in the "scripts" section of your package.json and no one even will notice that they are now happy Bun users.
+
+# References
+
+- [makeself.io](https://github.com/megastep/makeself)
