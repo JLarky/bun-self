@@ -29,7 +29,7 @@ async function start() {
       importHelpers: false,
       sourceMap: true,
       target: "ES2021",
-      lib: ["esnext", "dom", "dom.iterable"],
+      lib: ["ESNext", "DOM", "DOM.Iterable"],
     },
     package: {
       name: "bunsh",
