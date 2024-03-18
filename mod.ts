@@ -61,18 +61,25 @@ function getOutputFilename(filename: string) {
 
 function getTempalte() {
   return `
-#!/usr/bin/env bash
+#!/bin/sh
 
 /*/.this-doesnt-exist 2>/dev/null
-## Please do not edit this part of the script, this is a loader created by "bunx bun-self"
+## Please do not edit this part of the script, this is a loader created by "npx bun-self"
 if ! [ -x "$(command -v bun)" ]; then
-    echo "Installing bun.sh"
-    sleep 2
-    curl -fsSL https://bun.sh/install | bash
-    echo "Now let's run the script"
-    echo ""
+    ## it's possible that bun is installed but not in the PATH, let's check if BUN_INSTALL is set
+    if [ -z "$BUN_INSTALL" ]; then
+        export BUN_INSTALL="$HOME/.bun"
+        export PATH="$BUN_INSTALL/bin:$PATH"
+    fi
+    if ! [ -x "$(command -v bun)" ]; then
+        echo "Installing bun.sh"
+        [ -z "$CI" ] && sleep 2
+        curl -fsSL https://bun.sh/install | bash
+        echo "Now let's run the script"
+        echo ""
+    fi >&2
 fi
-bun $0
+bun "$0" "$@"
 exit 0
 #*/
 
